@@ -4,10 +4,11 @@ spring:
   datasource:
     username: root
     password: root
-    url: jdbc:mysql://localhost:13306/mybatis_plus?serverTimezone=UTC&characterEncoding=utf8&useUnicode=true&useSSL=true
+    url: jdbc:mysql://localhost:13306/mybatis_plus?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useUnicode=true&useSSL=true
     driver-class-name: com.mysql.cj.jdbc.Driver
 
 mybatis-plus:
   configuration:
     map-underscore-to-camel-case: true
-  mapper-locations: classpath:mapper/Mapper*.xml
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath:mapper/*Mapper.xml

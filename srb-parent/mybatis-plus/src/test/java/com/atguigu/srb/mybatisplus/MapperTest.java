@@ -8,32 +8,22 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 /**
  * @author cqs
  * @version 1.0.0
- * @ClassName Test1.java
+ * @ClassName MapperTest.java
  * @Description TODO
- * @createTime 2022年07月08日 17:55:00
+ * @createTime 2022年07月09日 14:57:00
  */
 @SpringBootTest
-public class Test1 {
-
+public class MapperTest {
     @Autowired
     private UserMapper userMapper;
-    @Test
-    public void crudTest(){
-        List<User> userList = userMapper.selectList(null);
-        assertEquals(5, userList.size());
-        userList.forEach(System.err::println);
-    }
-
 
     @Test
-    public void test1(){
-        System.out.println(1);
+    public void selectUserByNameTest(){
+        List<User> userList = userMapper.getUserByName("小");
+        userList.forEach(System.out::println);
     }
-
 
 }
