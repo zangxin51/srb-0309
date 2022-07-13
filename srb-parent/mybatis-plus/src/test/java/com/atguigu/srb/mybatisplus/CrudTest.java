@@ -3,6 +3,7 @@ package com.atguigu.srb.mybatisplus;
 import com.atguigu.srb.mybatisplus.mapper.UserMapper;
 import com.atguigu.srb.mybatisplus.pojo.entity.User;
 import com.atguigu.srb.mybatisplus.service.UserService;
+import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -28,12 +29,22 @@ public class CrudTest {
     private UserMapper userMapper;
 
     @Test
+    public void updateServiceTest(){
+        UpdateWrapper<User> userUpdateWrapper = new UpdateWrapper<>();
+        userUpdateWrapper.eq("age", 78);
+        User user = new User();
+        user.setName("小安培");
+        boolean update = userService.update(user,userUpdateWrapper);
+        System.out.println("受影响的条数:" + update);
+    }
+    @Test
     public void insertUser(){
+
         User user = new User();
 //        user.setId(); 有自增的主键
         user.setName("安培小三");
         user.setEmail("apss@gg.com");
-        user.setAge(78);
+        user.setAge(144);
         int insert = userMapper.insert(user);
 //        System.out.println(1/0); //默认没有事务
         user.setName("安培小三111");

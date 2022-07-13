@@ -1,0 +1,14 @@
+server:
+  port: 8110
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:13306/srb_core?serverTimezone=Asia/Shanghai&characterEncoding=utf-8&useSSL=true
+    username: root
+    password: root
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: com/atguigu/srb/core/mapper/xml/*.xml
+
