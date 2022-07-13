@@ -23,8 +23,7 @@ public class BorrowerTest {
 
     @Test
     public void test01(){
-        List<Borrower> borrowers = borrowerMapper.selectList(null);
+        List<Borrower> borrowers = borrowerMapper.myList();
         borrowers.forEach(System.err::println);
     }
-
 }

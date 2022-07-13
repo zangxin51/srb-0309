@@ -10,5 +10,5 @@ mybatis-plus:
   configuration:
     map-underscore-to-camel-case: true
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-  mapper-locations: com/atguigu/srb/core/mapper/xml/*.xml
+  mapper-locations: classpath:mapper/xml/*.xml #注意当我们自动生成时,要把mapper复制到resource文件夹中
 
