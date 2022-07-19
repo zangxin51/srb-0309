@@ -1,4 +1,4 @@
-package com.atguigu.srb.core.controller.front;
+package com.atguigu.srb.core.controller.admin;
 
 
 import com.atguigu.srb.core.pojo.entity.Borrower;

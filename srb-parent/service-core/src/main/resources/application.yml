@@ -1,6 +1,13 @@
 server:
   port: 8110
 spring:
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: Asia/Shanghai
+  profiles:
+    active: dev #environment
+  application:
+    name: service-core
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:13306/srb_core?serverTimezone=Asia/Shanghai&characterEncoding=utf-8&useSSL=true
@@ -11,4 +18,7 @@ mybatis-plus:
     map-underscore-to-camel-case: true
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
   mapper-locations: classpath:mapper/xml/*.xml #注意当我们自动生成时,要把mapper复制到resource文件夹中
-
+# 日志配置
+logging:
+  level:
+    root: info
